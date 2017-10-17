@@ -13,7 +13,7 @@ const TextInlineEdit = reduxForm({
 })(props =>
     <form onSubmit={props.handleSubmit}>
         <InputGroup>
-            <Field name="value" type="text" component="input" className="form-control" value={props.value} />
+            <Field name={props.name} type="text" component="input" className="form-control" value={props.value} />
             <InputGroup.Button>
                 <Button bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
                     <i className="fa fa-check" />
@@ -39,6 +39,6 @@ export const Text = connect(
             }
         })
     )(props => props.isOpen
-        ? <TextInlineEdit initialValues={{value: props.value}} close={props.close} onSubmit={props.save} />
+        ? <TextInlineEdit name={props.name || "value"} initialValues={{[props.name || "value"]: props.value}} close={props.close} onSubmit={props.save} />
         : <span>{props.text || props.value} <i className="fa fa-pencil" onClick={() => props.open()}/></span>
     );
