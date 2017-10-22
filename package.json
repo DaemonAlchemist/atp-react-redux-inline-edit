@@ -1,15 +1,34 @@
 {
   "name": "atp-inline-edit",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "An inline edit module.",
   "main": "src/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm run compile && mocha --compilers js:babel-core/register",
+    "test-quick": "mocha --compilers js:babel-core/register",
+    "test-clean": "npm install && npm test && rm -rf node_modules",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
+    "new-tag": "git push && git push origin --tags && npm publish",
+    "major": "npm version major && npm run new-tag",
+    "minor": "npm version minor && npm run new-tag",
+    "patch": "npm version patch && npm run new-tag",
+    "major-clean": "npm install && npm run major && rm -rf node_modules",
+    "minor-clean": "npm install && npm run minor && rm -rf node_modules",
+    "patch-clean": "npm install && npm run patch && rm -rf node_modules"
   },
   "repository": {
     "type": "git",
-    "url": "git.repo"
+    "url": "https://github.com/DaemonAlchemist/atp-react-redux-inline-edit.git"
   },
   "author": "Andrew Wittrock",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "atp-sugar": "^0.4.2",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.31.3",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-form": "^7.1.1"
+  }
 }
