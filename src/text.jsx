@@ -4,7 +4,7 @@
 
 import React from "react";
 import {isOpen, open, close} from "./reducer/inline-edit";
-import {FormGroup, FormControl, Button, InputGroup} from "react-bootstrap";
+import {Button, InputGroup} from "react-bootstrap";
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 
