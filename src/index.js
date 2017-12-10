@@ -5,6 +5,7 @@
 import inlineEdit from "./reducer/inline-edit";
 import {open, close, isOpen} from "./reducer/inline-edit";
 import {Text} from "./text";
+import {Textarea} from "./textarea";
 
 export default {
     reducers: {
@@ -12,6 +13,6 @@ export default {
     }
 };
 
-const InlineEdit = {Text};
+const InlineEdit = {Text, Textarea};
 
 export {InlineEdit, open, close, isOpen};
