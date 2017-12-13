@@ -7,6 +7,7 @@ import {open, close, isOpen} from "./reducer/inline-edit";
 import {Text} from "./text";
 import {Textarea} from "./textarea";
 import {Datepicker} from "./date-picker";
+import {Toggle} from './toggle';
 
 export default {
     reducers: {
@@ -14,6 +15,6 @@ export default {
     }
 };
 
-const InlineEdit = {Text, Textarea, Datepicker};
+const InlineEdit = {Text, Textarea, Datepicker, Toggle};
 
 export {InlineEdit, open, close, isOpen};
