@@ -9,13 +9,16 @@ import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import RichTextEditor from 'react-rte';
 
-class RichText extends Component {
+class RichText extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        console.log("rich text constructor")
         this.state = { value: undefined }
     }
 
     componentDidMount() {
+        console.log("rich text did mount");
+        console.log(this.props.input);
         this.setState({
             value: this.props.input.value ?
                 RichTextEditor.createValueFromString(this.props.input.value, 'markdown') :
@@ -23,7 +26,8 @@ class RichText extends Component {
         })
     }
 
-    handleChange = value => {
+    handleChange(value) {
+        console.log("rich text handleChange");
         this.setState({ value })
         let markdown = value.toString('markdown')
         if(markdown.length === 2 && markdown.charCodeAt(0) === 8203 && markdown.charCodeAt(1) === 10) {
@@ -33,8 +37,9 @@ class RichText extends Component {
     }
 
     render() {
-        const {state: { value }, handleChange } = this
-        return <RichTextEditor value={value} onChange={handleChange}/>
+        if(!this.state.value) return null;
+        console.log("rich text render");
+        return <RichTextEditor value={this.state.value} onChange={this.handleChange.bind(this)}/>
     }
 }
 
