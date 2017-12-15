@@ -8,6 +8,7 @@ import {Button, InputGroup} from "react-bootstrap";
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import RichTextEditor from 'react-rte';
+import marked from "marked";
 
 class RichText extends React.Component {
     constructor(props) {
@@ -39,7 +40,10 @@ class RichText extends React.Component {
     render() {
         if(!this.state.value) return null;
         console.log("rich text render");
-        return <RichTextEditor value={this.state.value} onChange={this.handleChange.bind(this)}/>
+        return <RichTextEditor
+            value={this.state.value}
+            onChange={this.handleChange.bind(this)}
+        />
     }
 }
 
@@ -92,5 +96,8 @@ export const Wysiwyg = connect(
             size={props.size || "lg"}
             rows={props.rows}
           />
-        : <span onClick={() => props.open()}>{props.text || props.value} <i className="fa fa-pencil"/></span>
+        : <div onClick={() => props.open()} style={{position: "relative"}}>
+            <div dangerouslySetInnerHTML={{__html: marked(props.text || props.value || "*Nothing to see here*")}} style={{paddingRight: "16px"}} />
+            <i className="fa fa-pencil" style={{position: "absolute", top: "3px", right: "0"}}/>
+          </div>
     );
