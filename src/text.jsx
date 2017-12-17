@@ -50,6 +50,6 @@ export const Text = connect(
           />
         : <span onClick={() => props.open()}>
             {props.text || props.value || <em>{props.placeHolder || "No value"}</em>}
-            <i className="fa fa-pencil"/>
+            &nbsp;<i className="fa fa-pencil"/>
           </span>
     );
