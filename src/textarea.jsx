@@ -50,5 +50,8 @@ export const Textarea = connect(
             size={props.size || "lg"}
             rows={props.rows}
           />
-        : <span onClick={() => props.open()}>{props.text || props.value} <i className="fa fa-pencil"/></span>
+        : <span onClick={() => props.open()}>
+            {props.text || props.value || <em>{props.placeHolder || "Nothing to see here."}</em>}
+            <i className="fa fa-pencil"/>
+          </span>
     );

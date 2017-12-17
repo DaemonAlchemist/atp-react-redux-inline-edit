@@ -48,5 +48,8 @@ export const Text = connect(
             onSubmit={props.save}
             size={props.size || "lg"}
           />
-        : <span onClick={() => props.open()}>{props.text || props.value} <i className="fa fa-pencil"/></span>
+        : <span onClick={() => props.open()}>
+            {props.text || props.value || <em>{props.placeHolder || "No value"}</em>}
+            <i className="fa fa-pencil"/>
+          </span>
     );

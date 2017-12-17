@@ -97,7 +97,12 @@ export const Wysiwyg = connect(
             rows={props.rows}
           />
         : <div onClick={() => props.open()} style={{position: "relative"}}>
-            <div dangerouslySetInnerHTML={{__html: marked(props.text || props.value || "*Nothing to see here*")}} style={{paddingRight: "16px"}} />
-            <i className="fa fa-pencil" style={{position: "absolute", top: "3px", right: "0"}}/>
-          </div>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: marked(props.text || props.value || "*" + (props.placeHolder || "Nothing to see here") + "*")
+                }}
+                style={{paddingRight: "16px"}}
+            />
+                <i className="fa fa-pencil" style={{position: "absolute", top: "3px", right: "0"}}/>
+            </div>
     );
