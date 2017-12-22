@@ -1,12 +1,10 @@
-/**
- * Created by Andy on 4/13/2017.
- */
 
 import React from "react";
 import {isOpen, open, close} from "./reducer/inline-edit";
 import {Button, InputGroup} from "react-bootstrap";
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
+import {Icon} from 'react-font-awesome-5';
 
 const TextareaInlineEdit = reduxForm({
     form: 'inline-edit-text'
@@ -18,10 +16,10 @@ const TextareaInlineEdit = reduxForm({
         <Field name={props.name} type="text" component="textarea" rows={props.rows} className="form-control" value={props.value} />
         <div style={{float: "right"}}>
             <Button bsSize={props.size} bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                <i className="fa fa-check" /> Save
+                <Icon.Check /> Save
             </Button>
             <Button bsSize={props.size} onClick={props.close} type="submit" bsStyle="default">
-                <i className="fa fa-times" /> Cancel
+                <Icon.Times /> Cancel
             </Button>
         </div>
     </form>
@@ -52,6 +50,6 @@ export const Textarea = connect(
           />
         : <span onClick={() => props.open()}>
             {props.text || props.value || <em>{props.placeHolder || "Nothing to see here."}</em>}
-            <i className="fa fa-pencil"/>
+            <Icon.PencilAlt />
           </span>
     );

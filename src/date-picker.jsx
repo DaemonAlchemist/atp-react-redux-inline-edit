@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 4/13/2017.
- */
 
 import React from "react";
 import {isOpen, open, close} from "./reducer/inline-edit";
@@ -9,6 +6,7 @@ import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import DatePicker from "react-16-bootstrap-date-picker";
 import dateFormat from 'dateformat';
+import {Icon} from 'react-font-awesome-5';
 
 const Picker = props => <DatePicker {...props} {...props.input} />
 
@@ -27,10 +25,10 @@ const DatepickerInlineEdit = reduxForm({
             />
             <InputGroup.Button>
                 <Button bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                    <i className="fa fa-check" />
+                    <Icon.Check />
                 </Button>
                 <Button onClick={props.close} type="submit" bsStyle="default">
-                    <i className="fa fa-times" />
+                    <Icon.Times />
                 </Button>
             </InputGroup.Button>
         </InputGroup>
@@ -59,5 +57,5 @@ export const Datepicker = connect(
             onSubmit={props.save}
             size={props.size || "lg"}
           />
-        : <span onClick={() => props.open()}>{dateFormat(props.value, props.format)} <i className="fa fa-pencil"/></span>
+        : <span onClick={() => props.open()}>{dateFormat(props.value, props.format)} <Icon.PencilAlt /></span>
     );

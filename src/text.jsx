@@ -1,12 +1,10 @@
-/**
- * Created by Andy on 4/13/2017.
- */
 
 import React from "react";
 import {isOpen, open, close} from "./reducer/inline-edit";
 import {Button, InputGroup} from "react-bootstrap";
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
+import {Icon} from 'react-font-awesome-5';
 
 const TextInlineEdit = reduxForm({
     form: 'inline-edit-text'
@@ -17,10 +15,10 @@ const TextInlineEdit = reduxForm({
             <Field name={props.name} type="text" component="input" className="form-control" value={props.value} />
             <InputGroup.Button>
                 <Button bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                    <i className="fa fa-check" />
+                    <Icon.Check />
                 </Button>
                 <Button onClick={props.close} type="submit" bsStyle="default">
-                    <i className="fa fa-times" />
+                    <Icon.Times />
                 </Button>
             </InputGroup.Button>
         </InputGroup>
@@ -50,6 +48,6 @@ export const Text = connect(
           />
         : <span onClick={() => props.open()}>
             {props.text || props.value || <em>{props.placeHolder || "No value"}</em>}
-            &nbsp;<i className="fa fa-pencil"/>
+            &nbsp;<Icon.PencilAlt />
           </span>
     );

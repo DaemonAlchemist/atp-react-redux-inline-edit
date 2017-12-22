@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 4/13/2017.
- */
 
 import React from "react";
 import {isOpen, open, close} from "./reducer/inline-edit";
@@ -9,6 +6,7 @@ import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import RichTextEditor from 'react-rte';
 import marked from "marked";
+import {Icon} from 'react-font-awesome-5';
 
 class RichText extends React.Component {
     constructor(props) {
@@ -64,10 +62,10 @@ const WysiwygInlineEdit = reduxForm({
         />
         <div style={{float: "right"}}>
             <Button bsSize={props.size} bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                <i className="fa fa-check" /> Save
+                <Icon.Check /> Save
             </Button>
             <Button bsSize={props.size} onClick={props.close} type="submit" bsStyle="default">
-                <i className="fa fa-times" /> Cancel
+                <Icon.Times /> Cancel
             </Button>
         </div>
     </form>
@@ -103,6 +101,6 @@ export const Wysiwyg = connect(
                 }}
                 style={{paddingRight: "16px"}}
             />
-                <i className="fa fa-pencil" style={{position: "absolute", top: "3px", right: "0"}}/>
+                <Icon.PencilAlt style={{position: "absolute", top: "3px", right: "0"}}/>
             </div>
     );

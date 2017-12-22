@@ -1,5 +1,6 @@
 import React from "react";
 import {Button} from 'react-bootstrap';
+import {Icon} from 'react-font-awesome-5';
 
 export const Toggle = props =>
     <Button
@@ -9,7 +10,7 @@ export const Toggle = props =>
         style={{width: "100%", textAlign: "right"}}
     >
         {props.enabled
-            ? <span className="text-success">{props.labelEnabled || "Enabled"} <i className="fa fa-toggle-on" /></span>
-            : <span className="text-danger">{props.labelDisabled || "Disabled"} <i className="fa fa-toggle-off" /></span>
+            ? <span className="text-success">{props.labelEnabled || "Enabled"} <Icon.ToggleOn /></span>
+            : <span className="text-danger">{props.labelDisabled || "Disabled"} <Icon.ToggleOff /></span>
         }
-    </Button>
+    </Button>;
