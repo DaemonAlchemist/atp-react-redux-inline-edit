@@ -48,7 +48,7 @@ class RichText extends React.Component {
 const WysiwygInlineEdit = reduxForm({
     form: 'inline-edit-text'
 })(props =>
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={props.handleSubmit} style={{color: "#000000"}}>
         <InputGroup bsSize={props.size}>
             {props.label && <InputGroup.Addon>{props.label}</InputGroup.Addon>}
         </InputGroup>
