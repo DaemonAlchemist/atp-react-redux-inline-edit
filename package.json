@@ -1,6 +1,6 @@
 {
   "name": "atp-inline-edit",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "An inline edit module.",
   "main": "lib/index.js",
   "scripts": {
