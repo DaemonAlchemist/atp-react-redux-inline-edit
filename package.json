@@ -37,7 +37,8 @@
     "react-font-awesome-5": "^0.2.2",
     "react-redux": "^5.0.6",
     "react-rte": "^0.16.0",
-    "redux-form": "^7.2.1"
+    "redux-form": "^7.2.1",
+    "style-it": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

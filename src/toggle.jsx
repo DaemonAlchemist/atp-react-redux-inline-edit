@@ -7,7 +7,7 @@ export const Toggle = props =>
         bsSize={props.size || "lg"}
         bsStyle="link"
         onClick={() => props.update(!props.enabled)}
-        style={{width: "100%", textAlign: "right"}}
+        style={{textAlign: "right"}}
     >
         {props.enabled
             ? <span className="text-success">{props.labelEnabled || "Enabled"} <Icon.ToggleOn /></span>
