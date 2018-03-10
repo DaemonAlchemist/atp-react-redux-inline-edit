@@ -57,5 +57,5 @@ export const Datepicker = connect(
             onSubmit={props.save}
             size={props.size || "lg"}
           />
-        : <span onClick={() => props.open()}>{dateFormat(props.value, props.format)} <Icon.PencilAlt /></span>
+        : <span onClick={() => props.open()}>{dateFormat(props.value, props.format, true)} <Icon.PencilAlt /></span>
     );
