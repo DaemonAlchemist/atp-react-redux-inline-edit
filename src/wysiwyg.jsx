@@ -11,13 +11,10 @@ import {Icon} from 'react-font-awesome-5';
 class RichText extends React.Component {
     constructor(props) {
         super(props);
-        console.log("rich text constructor")
         this.state = { value: undefined }
     }
 
     componentDidMount() {
-        console.log("rich text did mount");
-        console.log(this.props.input);
         this.setState({
             value: this.props.input.value ?
                 RichTextEditor.createValueFromString(this.props.input.value, 'markdown') :
@@ -26,7 +23,6 @@ class RichText extends React.Component {
     }
 
     handleChange(value) {
-        console.log("rich text handleChange");
         this.setState({ value })
         let markdown = value.toString('markdown')
         if(markdown.length === 2 && markdown.charCodeAt(0) === 8203 && markdown.charCodeAt(1) === 10) {
@@ -37,7 +33,7 @@ class RichText extends React.Component {
 
     render() {
         if(!this.state.value) return null;
-        console.log("rich text render");
+
         return <RichTextEditor
             value={this.state.value}
             onChange={this.handleChange.bind(this)}
@@ -61,11 +57,11 @@ const WysiwygInlineEdit = reduxForm({
             value={props.value}
         />
         <div style={{float: "right"}}>
-            <Button bsSize={props.size} bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                <Icon.Check /> Save
+            <Button bsSize={props.size} bsStyle="link" type="submit">
+                <span className="text-success"><Icon.Check /> Save</span>
             </Button>
-            <Button bsSize={props.size} onClick={props.close} type="submit" bsStyle="default">
-                <Icon.Times /> Cancel
+            <Button bsSize={props.size} onClick={props.close} type="submit" bsStyle="link">
+                <span className="text-danger"><Icon.Times /> Cancel</span>
             </Button>
         </div>
     </form>

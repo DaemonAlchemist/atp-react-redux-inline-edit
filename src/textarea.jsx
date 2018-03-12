@@ -15,11 +15,11 @@ const TextareaInlineEdit = reduxForm({
         </InputGroup>
         <Field name={props.name} type="text" component="textarea" rows={props.rows} className="form-control" value={props.value} />
         <div style={{float: "right"}}>
-            <Button bsSize={props.size} bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                <Icon.Check /> Save
+            <Button bsSize={props.size} bsStyle="link" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
+                <span className="text-success"><Icon.Check /> Save</span>
             </Button>
-            <Button bsSize={props.size} onClick={props.close} type="submit" bsStyle="default">
-                <Icon.Times /> Cancel
+            <Button bsSize={props.size} onClick={props.close} type="submit" bsStyle="link">
+                <span className="text-danger"><Icon.Times /> Cancel</span>
             </Button>
         </div>
     </form>

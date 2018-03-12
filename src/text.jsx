@@ -15,11 +15,11 @@ const TextInlineEdit = reduxForm({
             {props.label && <InputGroup.Addon>{props.label}</InputGroup.Addon>}
             <Field name={props.name} type="text" component="input" className="form-control" value={props.value} />
             <InputGroup.Button>
-                <Button bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                    <Icon.Check />
+                <Button bsStyle="link" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
+                    <span className="text-success"><Icon.Check /></span>
                 </Button>
-                <Button onClick={props.close} type="submit" bsStyle="default">
-                    <Icon.Times />
+                <Button onClick={props.close} type="submit" bsStyle="link">
+                    <span class="text-danger"><Icon.Times /></span>
                 </Button>
             </InputGroup.Button>
         </InputGroup>

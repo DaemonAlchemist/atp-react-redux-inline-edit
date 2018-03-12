@@ -14,7 +14,7 @@ const DatepickerInlineEdit = reduxForm({
     form: 'inline-edit-text'
 })(props =>
     <form onSubmit={props.handleSubmit}>
-        <InputGroup bsSize={props.size} style={{zIndex: 999}}>
+        <InputGroup bsSize={props.size} style={{zIndex: 999, position: "relative"}}>
             {props.label && <InputGroup.Addon>{props.label}</InputGroup.Addon>}
             <Field
                 name={props.name}
@@ -24,11 +24,11 @@ const DatepickerInlineEdit = reduxForm({
                 value={props.value}
             />
             <InputGroup.Button>
-                <Button bsStyle="primary" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
-                    <Icon.Check />
+                <Button bsStyle="link" type="submit">
+                    <span className="text-success"><Icon.Check /></span>
                 </Button>
-                <Button onClick={props.close} type="submit" bsStyle="default">
-                    <Icon.Times />
+                <Button onClick={props.close} type="submit" bsStyle="link">
+                    <span className="text-danger"><Icon.Times /></span>
                 </Button>
             </InputGroup.Button>
         </InputGroup>
