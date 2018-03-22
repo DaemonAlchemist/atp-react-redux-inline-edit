@@ -13,7 +13,15 @@ const TextInlineEdit = reduxForm({
     <form onSubmit={props.handleSubmit} style={{verticalAlign: "bottom", margin: "-1px", display: props.inline ? "inline-block" : "block"}}>
         <InputGroup bsSize={props.size} style={{zIndex: 999}}>
             {props.label && <InputGroup.Addon>{props.label}</InputGroup.Addon>}
-            <Field name={props.name} type="text" component="input" className="form-control" value={props.value} />
+            <Field
+                name={props.name}
+                type="text"
+                component="input"
+                className="form-control"
+                autoFocus
+                onFocus={e => {e.target.select();}}
+                value={props.value}
+            />
             <InputGroup.Button>
                 <Button bsStyle="link" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
                     <span className="text-success"><Icon.Check /></span>

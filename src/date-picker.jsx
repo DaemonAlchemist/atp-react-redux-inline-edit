@@ -21,6 +21,7 @@ const DatepickerInlineEdit = reduxForm({
                 component={Picker}
                 showClearButton={false}
                 className={"form-control input-" + props.size}
+                autoFocus
                 value={props.value}
             />
             <InputGroup.Button>

@@ -36,6 +36,7 @@ class RichText extends React.Component {
 
         return <RichTextEditor
             value={this.state.value}
+            autoFocus
             onChange={this.handleChange.bind(this)}
         />
     }

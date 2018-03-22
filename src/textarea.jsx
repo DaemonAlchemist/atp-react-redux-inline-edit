@@ -13,7 +13,16 @@ const TextareaInlineEdit = reduxForm({
         <InputGroup bsSize={props.size}>
             {props.label && <InputGroup.Addon>{props.label}</InputGroup.Addon>}
         </InputGroup>
-        <Field name={props.name} type="text" component="textarea" rows={props.rows} className="form-control" value={props.value} />
+        <Field
+            name={props.name}
+            type="text"
+            component="textarea"
+            rows={props.rows}
+            className="form-control"
+            autoFocus
+            onFocus={e => {e.target.select();}}
+            value={props.value}
+        />
         <div style={{float: "right"}}>
             <Button bsSize={props.size} bsStyle="link" type="submit" style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}}>
                 <span className="text-success"><Icon.Check /> Save</span>

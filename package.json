@@ -28,16 +28,16 @@
   "license": "MIT",
   "dependencies": {
     "atp-sugar": "^0.8.4",
-    "dateformat": "^3.0.2",
-    "dependency-check": "^3.0.0",
-    "marked": "^0.3.12",
+    "dateformat": "^3.0.3",
+    "dependency-check": "^3.1.0",
+    "marked": "^0.3.18",
     "react": "^16.2.0",
     "react-16-bootstrap-date-picker": "^5.1.2",
     "react-bootstrap": "^0.32.1",
     "react-font-awesome-5": "^0.2.2",
-    "react-redux": "^5.0.6",
-    "react-rte": "^0.16.0",
-    "redux-form": "^7.2.1",
+    "react-redux": "^5.0.7",
+    "react-rte": "^0.16.1",
+    "redux-form": "^7.3.0",
     "style-it": "^2.0.0"
   },
   "devDependencies": {
@@ -47,6 +47,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.4"
   }
 }
