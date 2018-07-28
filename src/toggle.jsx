@@ -2,15 +2,16 @@ import React from "react";
 import {Button} from 'react-bootstrap';
 import {Icon} from 'react-font-awesome-5';
 
-export const Toggle = props =>
+export const Toggle = ({size, update, enabled, labelEnabled, labelDisabled, disabled}) =>
     <Button
-        bsSize={props.size || "lg"}
+        bsSize={size || "lg"}
         bsStyle="link"
-        onClick={() => props.update(!props.enabled)}
+        onClick={() => update(!enabled)}
         style={{textAlign: "right"}}
+        disabled={disabled || false}
     >
-        {props.enabled
-            ? <span className="text-success">{props.labelEnabled || "Enabled"} <Icon.ToggleOn /></span>
-            : <span className="text-danger">{props.labelDisabled || "Disabled"} <Icon.ToggleOff /></span>
+        {enabled
+            ? <span className="text-success">{labelEnabled || "Enabled"} <Icon.ToggleOn /></span>
+            : <span className="text-danger">{labelDisabled || "Disabled"} <Icon.ToggleOff /></span>
         }
     </Button>;
