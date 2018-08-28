@@ -53,7 +53,7 @@ export const Text = connect(
             initialValues={{[props.name || "value"]: props.value}}
             close={props.close}
             onSubmit={props.save}
-            size={props.size || "lg"}
+            size={typeof props.size !== 'undefined' ? props.size : "lg"}
             inline={props.inline}
           />
         : <span>
