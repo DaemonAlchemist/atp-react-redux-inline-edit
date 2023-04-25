@@ -24,7 +24,7 @@
     "type": "git",
     "url": "https://github.com/DaemonAlchemist/atp-react-redux-inline-edit.git"
   },
-  "author": "Andrew Wittrock",
+  "author": "DaemonAlchemist",
   "license": "MIT",
   "dependencies": {
     "atp-sugar": "^0.9.1",
